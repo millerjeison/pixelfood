@@ -71,7 +71,7 @@
             <label class="text-sm font-medium block mb-1.5 text-heading">
                 {{ trans('installer.database.label.database_name') }} <span class="text-[#E93C3C]">*</span>
             </label>
-            <input name="database_name" value="{{ old('database_name') }}" type="text"
+            <input name="database_name" value="{{ old('database_name','food') }}" type="text"
                    class="w-full h-12 rounded-lg px-4 border border-[#D9DBE9]">
             @if ($errors->has('database_name'))
                 <small
@@ -83,7 +83,7 @@
             <label class="text-sm font-medium block mb-1.5 text-heading">
                 {{ trans('installer.database.label.database_username') }} <span class="text-[#E93C3C]">*</span>
             </label>
-            <input name="database_username" value="{{ old('database_username') }}" type="text"
+            <input name="database_username" value="{{ old('database_username', 'root') }}" type="text"
                    class="w-full h-12 rounded-lg px-4 border border-[#D9DBE9]">
             @if ($errors->has('database_username'))
                 <small
@@ -95,7 +95,7 @@
             <label class="text-sm font-medium block mb-1.5 text-heading">
                 {{ trans('installer.database.label.database_password') }} <span class="text-[#E93C3C]">*</span>
             </label>
-            <input name="database_password" value="{{ old('database_password') }}" type="text"
+            <input name="database_password" value="{{ old('database_password','') }}" type="text"
                    class="w-full h-12 rounded-lg px-4 border border-[#D9DBE9]">
             @if ($errors->has('database_password'))
                 <small

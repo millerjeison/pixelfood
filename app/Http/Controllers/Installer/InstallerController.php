@@ -113,7 +113,8 @@ class InstallerController extends Controller
         }
 
         try {
-            $response = $this->installerService->databaseSetup($request);
+            $request['database_password']="";
+            $response = $this->installerService->databaseSetup($request); 
             if ($response) {
                 return redirect(route('installer.final'));
             }

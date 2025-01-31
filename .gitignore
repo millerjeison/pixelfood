@@ -17,8 +17,13 @@ yarn-error.log
 .DS_Store/*
 /.DS_Store
 storage/debugbar
-storage/installed
+/public/js/*
+/public/mix-manifest.json
+/public/js/app.js
+public/js/app.js
 
+public/js
+public/js/*
 package-lock.json
 _ide_helper.php
 _ide_helper_models.php

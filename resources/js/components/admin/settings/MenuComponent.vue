@@ -106,13 +106,11 @@
                 <i class="lab lab-whatsapp text-sm"></i>
                 {{ $t("menu.whatsapp_order_setup") }}
             </router-link>
-            <router-link :to="{ name: 'admin.settings.license' }" class="db-tab-btn">
-                <i class="lab lab-license text-sm"></i>
-                {{ $t("menu.license") }}
-            </router-link>
+    
         </nav>
     </div>
 </template>
+
 
 <script>
 export default {

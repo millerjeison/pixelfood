@@ -15,9 +15,9 @@ class Installed
      */
     public function handle($request, Closure $next)
     {
-        if (!file_exists(storage_path('installed'))) {
-            return redirect('/install');
-        }
+        // if (!file_exists(storage_path('installed'))) {
+        //     return redirect('/install');
+        // }
         return $next($request);
     }
 }

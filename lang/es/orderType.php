@@ -3,7 +3,7 @@
 use App\Enums\OrderType;
 
 return [
-    OrderType::DELIVERY     => 'Lieferung',
+    OrderType::DELIVERY     => 'Delivery',
     OrderType::TAKEAWAY     => 'Takeaway',
     OrderType::POS          => 'Pos',
 
