@@ -25,26 +25,26 @@ class InstallerService
 
     public function databaseSetup(Request $request): bool
     {
-        $connection = $this->checkDatabaseConnection($request);
-        if ($connection) {
-            $envService = new EnvEditor();
-            $envService->addData([
-                'DB_HOST'     => $request->database_host,
-                'DB_PORT'     => $request->database_port,
-                'DB_DATABASE' => $request->database_name,
-                'DB_USERNAME' => $request->database_username,
-                'DB_PASSWORD' => $request->database_password,
-            ]);
+        // $connection = $this->checkDatabaseConnection($request);
+        // if ($connection) {
+        //     $envService = new EnvEditor();
+        //     $envService->addData([
+        //         'DB_HOST'     => $request->database_host,
+        //         'DB_PORT'     => $request->database_port,
+        //         'DB_DATABASE' => $request->database_name,
+        //         'DB_USERNAME' => $request->database_username,
+        //         'DB_PASSWORD' => $request->database_password,
+        //     ]);
 
-            Artisan::call('config:cache');
-            Artisan::call('migrate:fresh', ['--force' => true]);
-            if(Artisan::call('db:seed', ['--force' => true])) {
-                Artisan::call('optimize:clear');
-                Artisan::call('config:clear');
-            }
-            return true;
-        }
-        return false;
+        Artisan::call('config:cache');
+        // Artisan::call('migrate:fresh', ['--force' => true]);
+        // if(Artisan::call('db:seed', ['--force' => true])) {
+        Artisan::call('optimize:clear');
+        Artisan::call('config:clear');
+        // }
+        return true;
+        // }
+        // return false;
     }
 
     private function checkDatabaseConnection(Request $request): bool
@@ -80,10 +80,10 @@ class InstallerService
 
     public function licenseCodeChecker($array)
     {
-		return (object)[
-			'status'  => true,
-			'message' => 'verified'
-		];
+        return (object)[
+            'status'  => true,
+            'message' => 'verified'
+        ];
     }
 
     public function finalSetup(): void
@@ -107,4 +107,3 @@ class InstallerService
         Artisan::call('optimize:clear');
     }
 }
-
